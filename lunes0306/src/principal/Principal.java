@@ -23,6 +23,17 @@ public class Principal extends javax.swing.JFrame {
         rb_1.setSelected(true);
     
     }
+    public void configurarRB2(){
+        
+        ButtonGroup operacion = new ButtonGroup();
+        operacion.add(rb_sumar);
+        operacion.add(rb_restar);
+        operacion.add(rb_multi);
+        operacion.add(rb_div);
+        operacion.add(rb_pot);
+        rb_sumar.setSelected(true);
+    
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -39,6 +50,16 @@ public class Principal extends javax.swing.JFrame {
         rb_3 = new javax.swing.JRadioButton();
         rb_4 = new javax.swing.JRadioButton();
         btn_aceptar = new javax.swing.JButton();
+        jPanel2 = new javax.swing.JPanel();
+        num1 = new javax.swing.JTextField();
+        num2 = new javax.swing.JTextField();
+        rb_sumar = new javax.swing.JRadioButton();
+        rb_restar = new javax.swing.JRadioButton();
+        rb_multi = new javax.swing.JRadioButton();
+        rb_div = new javax.swing.JRadioButton();
+        rb_pot = new javax.swing.JRadioButton();
+        btn_realizar = new javax.swing.JButton();
+        resultado = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -57,6 +78,82 @@ public class Principal extends javax.swing.JFrame {
             }
         });
 
+        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder("Ejercicio 1"));
+
+        num1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                num1ActionPerformed(evt);
+            }
+        });
+
+        rb_sumar.setText("Sumar");
+
+        rb_restar.setText("Restar");
+
+        rb_multi.setText("Multiplicar");
+
+        rb_div.setText("Dividir");
+
+        rb_pot.setText("Potencia");
+        rb_pot.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rb_potActionPerformed(evt);
+            }
+        });
+
+        btn_realizar.setText("REALIZAR OPERACION");
+        btn_realizar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_realizarActionPerformed(evt);
+            }
+        });
+
+        resultado.setText("Resultado");
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btn_realizar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(num1)
+                    .addComponent(num2)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(rb_pot)
+                            .addComponent(rb_div)
+                            .addComponent(rb_multi)
+                            .addComponent(rb_restar)
+                            .addComponent(rb_sumar))
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addComponent(resultado))
+                .addContainerGap())
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addComponent(num1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(num2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(rb_sumar)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(rb_restar)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(rb_multi)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(rb_div)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(rb_pot)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btn_realizar)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(resultado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -64,16 +161,22 @@ public class Principal extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(55, 55, 55)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(rb_2)
-                            .addComponent(rb_1)
-                            .addComponent(rb_3)
-                            .addComponent(rb_4)))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(55, 55, 55)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(rb_2)
+                                    .addComponent(rb_1)
+                                    .addComponent(rb_3)
+                                    .addComponent(rb_4)))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(83, 83, 83)
+                                .addComponent(btn_aceptar)))
+                        .addGap(0, 89, Short.MAX_VALUE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(87, 87, 87)
-                        .addComponent(btn_aceptar)))
-                .addContainerGap(59, Short.MAX_VALUE))
+                        .addContainerGap()
+                        .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -86,9 +189,11 @@ public class Principal extends javax.swing.JFrame {
                 .addComponent(rb_3)
                 .addGap(18, 18, 18)
                 .addComponent(rb_4)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 54, Short.MAX_VALUE)
+                .addGap(29, 29, 29)
                 .addComponent(btn_aceptar)
-                .addGap(48, 48, 48))
+                .addGap(18, 18, 18)
+                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -130,6 +235,30 @@ public class Principal extends javax.swing.JFrame {
         
     }//GEN-LAST:event_btn_aceptarActionPerformed
 
+    private void rb_potActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rb_potActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_rb_potActionPerformed
+
+    private void num1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_num1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_num1ActionPerformed
+
+    private void btn_realizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_realizarActionPerformed
+        if (rb_sumar.isSelected()) {
+            
+        }
+        if (rb_restar.isSelected()) {
+            JOptionPane.showInputDialog(null,"RB2");
+        }
+        if (rb_multi.isSelected()) {
+            JOptionPane.showConfirmDialog(null,"RB3");
+        }
+        if (rb_div.isSelected()) {
+            String[] rb = {"opcion 1","opcion 2","opcion 3"};
+            JOptionPane.showOptionDialog(null,"RB4","titulo", 0, 0, null, rb, null);
+        }
+    }//GEN-LAST:event_btn_realizarActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -167,10 +296,20 @@ public class Principal extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_aceptar;
+    private javax.swing.JButton btn_realizar;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JTextField num1;
+    private javax.swing.JTextField num2;
     private javax.swing.JRadioButton rb_1;
     private javax.swing.JRadioButton rb_2;
     private javax.swing.JRadioButton rb_3;
     private javax.swing.JRadioButton rb_4;
+    private javax.swing.JRadioButton rb_div;
+    private javax.swing.JRadioButton rb_multi;
+    private javax.swing.JRadioButton rb_pot;
+    private javax.swing.JRadioButton rb_restar;
+    private javax.swing.JRadioButton rb_sumar;
+    private javax.swing.JTextField resultado;
     // End of variables declaration//GEN-END:variables
 }
