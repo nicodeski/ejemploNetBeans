@@ -1,6 +1,7 @@
 
 package principal;
 
+import java.text.DecimalFormat;
 import javax.swing.ButtonGroup;
 import javax.swing.JOptionPane;
 
@@ -11,6 +12,7 @@ public class Principal extends javax.swing.JFrame {
     public Principal() {
         initComponents();
         configurarRB();
+        configurarRB2();
     }
     
     public void configurarRB(){
@@ -244,18 +246,29 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_num1ActionPerformed
 
     private void btn_realizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_realizarActionPerformed
+        DecimalFormat df = new DecimalFormat("#.0");
+        double numero1 = Double.parseDouble(num1.getText());
+        double numero2 = Double.parseDouble(num2.getText());
+        double total;
         if (rb_sumar.isSelected()) {
-            
+            total = numero1+numero2;
+            resultado.setText(""+df.format(total));
         }
         if (rb_restar.isSelected()) {
-            JOptionPane.showInputDialog(null,"RB2");
+            total = numero1-numero2;
+            resultado.setText(""+df.format(total));
         }
         if (rb_multi.isSelected()) {
-            JOptionPane.showConfirmDialog(null,"RB3");
+            total = numero1*numero2;
+            resultado.setText(""+df.format(total));
         }
         if (rb_div.isSelected()) {
-            String[] rb = {"opcion 1","opcion 2","opcion 3"};
-            JOptionPane.showOptionDialog(null,"RB4","titulo", 0, 0, null, rb, null);
+            total = numero1/numero2;
+            resultado.setText(""+df.format(total));
+        }
+        if (rb_pot.isSelected()) {
+            total = Math.pow(numero1, numero2);
+            resultado.setText(""+df.format(total));
         }
     }//GEN-LAST:event_btn_realizarActionPerformed
 
